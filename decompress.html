@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diminuto</title>
+    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="styles/decompress.css" />
+    <link href="https://fonts.googleapis.com/css?family=Cardo:400,700|Oswald" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
+</head>
+
+<body onload = "checkFiles()">
+    <div id="navbar">
+        <a href="index.html">Diminuto</a>
+        <a href="compress.html">Compress</a>
+        <a style="color:rgb(255, 230, 0);text-decoration: underline;" href="decompress.html">Decompress</a>
+    </div>
+    <h2 class = "uploadtext">Start decompressing.</h2>
+    <section id="card">
+        <div class="container">
+            <p class="uploadtext2">Compressed Files:</p>
+            <p class="decompressdescription" id="decfile"> No Decompressed Files</p>
+            <canvas id="mesh"><a id="link" download style="display: none">shouldn't be visible</a></canvas>
+            
+        </div> 
+    </section>
+    <script>
+        function checkFiles() {
+            // this function executes when the webpage loads -> and checks for if any compressed files exist in the appropriate folder
+            var text = "no files";
+            // use the if statement to check if a compressed file exists (replace the insides)
+            if (File.exists) {
+                // implement the following logic: 
+                // var = getFileFromPath();
+                // text = file.name;
+                document.getElementById("decfile").innerHTML = text;
+                var downloadButton = document.createElement("Button");
+                var textForButton2 = document.createTextNode("Decompress and Download");
+                downloadButton.appendChild(textForButton2);
+                downloadButton.style.marginLeft="1230px";
+                downloadButton.style.marginTop="80px";
+
+                const link = document.getElementById('link');
+                let objectURL;
+                downloadButton.addEventListener('onClick', function() {
+                    // replace variable and function names & fix file paths below
+                    var compressedfile = getFileFromPathName();
+                    var decompressedfile;
+                    // run python script to turn compressed file -> decompressed file
+                    if (objectURL) {
+                        URL.revokeObjectURL(objectURL);  
+                    }
+                    objectURL = URL.createObjectURL(decompressedfile);
+                    link.href = objectURL;
+                    link.click();
+                });
+                document.getElementsByTagName("body")[0].appendChild(downloadButton);
+            }
+        }
+    </script>
+    <script src="./decompression.js"></script>
+</body>
+</html>

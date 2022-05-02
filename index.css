@@ -1,0 +1,42 @@
+html,
+body {
+    height: 100vh;
+    background: rgb(101, 113, 223);
+    margin: 0;
+}
+#navbar {
+    height: 50px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background: rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+  
+#navbar > * {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-size: 20px;
+    position: relative;
+    padding-right: 20px;
+    color: rgb(101, 113, 223);
+    text-decoration: none;
+}
+  
+#navbar > *:first-child {
+    padding-right: 1000px;
+}
+
+#about {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    padding: 40px;
+}
+  
+#about > * {
+    color: rgb(255, 255, 255);
+    padding: 50px;
+}

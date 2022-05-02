@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diminuto</title>
+    <link rel="stylesheet" href="styles/compress.css" />
+    <link rel="stylesheet" href="styles/index.css" />
+    <link href="https://fonts.googleapis.com/css?family=Cardo:400,700|Oswald" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
+</head>
+
+<body>
+    <div id="navbar">
+        <a href="index.html">Diminuto</a>
+        <a style="color:rgb(255, 230, 0);text-decoration: underline;" href="compress.html">Compress</a>
+        <a href="decompress.html">Decompress</a>
+    </div>
+    <h2 class = "uploadtext">Upload file to start compressing.</h2>
+    <section id="card">
+        <div method="post" enctype="multipart/form-data">
+            <p class= "uploadtext2">Drop file here.</p>
+            <canvas id="mesh"></canvas>
+            <label class="custom-file-upload">
+                <input type="file" id="file-upload" />
+                <a id="link" download style="display: none">shouldn't be visible</a>
+            </label>
+            <button class="button" id="button1">submit</button>
+        </div> 
+    </section>
+    <script src="./compression.js"></script>
+
+</body>
+</html>
